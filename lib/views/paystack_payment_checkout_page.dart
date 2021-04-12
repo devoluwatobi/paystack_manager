@@ -158,7 +158,7 @@ class _PaystackPaymentCheckOutPageState
         break;
 
       case TransactionState.SEND_BIRTHDATE:
-        //makinng sure there is instruction for the user
+        //making sure there is instruction for the user
         _transactionStateMessage = _transactionStateMessage.isEmpty
             ? "Please enter your date of birth"
             : _transactionStateMessage;
@@ -177,7 +177,7 @@ class _PaystackPaymentCheckOutPageState
         break;
 
       case TransactionState.FAILED:
-        //makinng sure there is instruction for the user
+        //making sure there is instruction for the user
         _transactionStateMessage = _transactionStateMessage.isEmpty
             ? "Transaction Failed. please try again or use another payment option if possible"
             : _transactionStateMessage;
@@ -194,10 +194,12 @@ class _PaystackPaymentCheckOutPageState
     return WillPopScope(
       //forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,)
       onWillPop: () async {
-        if (Navigator.of(context).userGestureInProgress)
-          return false;
-        else
-          return true;
+        // if (Navigator.of(context).userGestureInProgress)
+        //   return false;
+        // else
+        //   return true;
+
+        return false;
       },
       child: Scaffold(
         backgroundColor: Colors.white,
